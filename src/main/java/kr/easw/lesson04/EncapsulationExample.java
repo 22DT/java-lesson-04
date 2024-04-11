@@ -37,14 +37,21 @@ public class EncapsulationExample {
             return realFuelEfficiency;
         }
 
-        public void setRealFuelEfficiency(double realFuelEfficiency) {
+        public void setRealFuelEfficiency(double realFuelEfficiency) throws Exception {
+            if(this.realFuelEfficiency<realFuelEfficiency){
+                throw new Exception();
+            }
             this.realFuelEfficiency = realFuelEfficiency;
         }
     }
 
     private static class PerformanceManipulation extends Car {
         {
-            setRealFuelEfficiency(15.0);
+            try {
+                setRealFuelEfficiency(15.0);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
 
         @Override

@@ -24,7 +24,7 @@ public class ImplementationExample {
          * "TestValue"
          */
         public String getString() {
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            return "TestValue";
         }
 
         /**
@@ -44,7 +44,15 @@ public class ImplementationExample {
          * @param data 계산이 진행되어야 할 값
          */
         public String eval(String first, int data) {
-            throw new RuntimeException("이 코드 라인을 지우고, 이곳에서 작성하십시오.");
+            int temp=(data/2)*7;
+            long tmp= (long) temp *temp*temp;
+            long tmp2=tmp/5;
+            String str=tmp2+"";
+            StringBuilder result=new StringBuilder();
+            result.append(" - ");
+            result.append(tmp2);
+
+            return result.toString();
         }
     }
 }
